@@ -10,7 +10,7 @@ then
 fi
 
 # List directory contents
-alias sl=ls
+alias lc="sl"
 alias la='ls -AF'       # Compact view, show hidden
 alias ll='ls -al'
 alias l='ls -a'
@@ -44,6 +44,7 @@ alias edit="$EDITOR"
 alias pager="$PAGER"
 
 alias q='exit'
+#alias :q='exit'
 
 alias irc="${IRC_CLIENT:=irc}"
 
@@ -56,10 +57,10 @@ alias ipy='ipython'
 
 alias piano='pianobar'
 
-alias ..='cd ..'         # Go up one directory
-alias cd..='cd ..'       # Common misspelling for going up one directory
-alias ...='cd ../..'     # Go up two directories
-alias ....='cd ../../..' # Go up three directories
+alias ..='cd .. && la'         # Go up one directory
+alias cd..='cd .. && la'       # Common misspelling for going up one directory
+alias ...='cd ../.. && la'     # Go up two directories
+alias ....='cd ../../.. && la' # Go up three directories
 alias -- -='cd -'        # Go back
 
 # Shell History

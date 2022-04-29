@@ -15,7 +15,7 @@ GIT_THEME_PROMPT_SUFFIX="${green?}|"
 function prompt_command() {
 	local scm_prompt_info
 	scm_prompt_info="$(scm_prompt_info)"
-	PS1="\n${bold_black?}[${blue?}\@${bold_black?}]-${bold_black?}[${green?}\u${yellow?}@${green?}\h${bold_black?}]-${bold_black?}[${purple?}\w${bold_black?}]-${scm_prompt_info?}\n${reset_color?}\$ "
+	PS1="\n${bold_black?}[${blue?}\@${bold_black?}]-${bold_black?}[${blue?}\u${green?}@${blue?}\h${bold_black?}]-${bold_black?}[${purple?}\w${bold_black?}]-${scm_prompt_info?}\n${white?}\$ "
 }
 
 safe_append_prompt_command prompt_command

@@ -12,7 +12,7 @@ export HISTCONTROL=${HISTCONTROL:-ignorespace:erasedups}
 export HISTSIZE=${HISTSIZE:-50000}
 
 # Flush history to disk after each command.
-export PROMPT_COMMAND="history -a;${PROMPT_COMMAND}"
+export PROMPT_COMMAND="history -a; history -c; history -r;${PROMPT_COMMAND}"
 
 function top-history() {
 	about 'print the name and count of the most commonly run tools'

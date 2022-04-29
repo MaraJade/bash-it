@@ -9,7 +9,7 @@ function _set_pkg_aliases()
 	if _command_exists curl
 	then
 		# follow redirects
-                alias cl='curl -L'
+                alias cll='curl -L'
                 # follow redirects, download as original name
                 alias clo='curl -L -O'
                 # follow redirects, download as original name, continue
