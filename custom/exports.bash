@@ -25,8 +25,7 @@ export PATH=~/.local/bin:$PATH
 export PATH=~/local/bin:$PATH
 
 # Auto add ssh keys
-keychain id_ed25519_personal
-keychain id_ed25519_work_git
+keychain id_rsa_github
 . ~/.keychain/`uname -n`-sh
 
 # Put tldr in path
@@ -58,6 +57,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # Confluence
 export CONFLUENCE_USERNAME=mgoossens@aspiration.com
-export CONFLUENCE_TOKEN=ThB3Nr1vmutaUzFt8GZAEB52
 
 export awsDockerLogin="aws ecr get-login-password | docker login --password-stdin --username AWS 332894900161.dkr.ecr.us-west-2.amazonaws.com"
