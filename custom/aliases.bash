@@ -132,6 +132,7 @@ alias qlf='qlmanage -p "$@" >& /dev/null'
 alias websites="ssh twobitra@twobitranch.net"
 alias bot="ssh -vvv -i ~/.ssh/id_rsa_jnbot.pem ec2-user@ec2-54-153-39-73.us-west-1.compute.amazonaws.com"
 alias pi="ssh -i ~/.ssh/id_ed25519_pi pi@10.0.0.180"
+alias jadefire="ssh -i ~/.ssh/id_ed25519_jadefire marajade@10.0.0.209"
 
 # Fuck
 eval "$(thefuck --alias fuck)"
