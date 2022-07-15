@@ -1,4 +1,7 @@
 #!/bin/bash
+# TODO: create checks for macos vs linux
+# Maybe different branches forked off master?
+# Or profiles in bash-it, those are a thing
 
 # All the exports for everything
 
@@ -19,27 +22,30 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 # Default data directory
 export XDG_DATA_HOME=$HOME/.local/share
+# Default state directory
+export XDG_STATE_HOME=$HOME/.local/state
 
 # Put local dirs in path
 export PATH=~/.local/bin:$PATH
+export PATH=~/.local/share:$PATH
+export PATH=~/.local/state:$PATH
 export PATH=~/local/bin:$PATH
 
 # Auto add ssh keys
-keychain id_rsa_github
+keychain id_ed25519_work_git
+keychain id_ed25519_personal
 . ~/.keychain/`uname -n`-sh
 
 # Put tldr in path
 export PATH=~/bin:$PATH
 
-#export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # This loads nvm bash_completion
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Go
-#export PATH=$GOPATH/bin:$PATH
-#export PATH=$GOROOT/bin:$PATH
 export GOBIN="$HOME/projects/go/bin"
 export GOMODCACHE="$HOME/projects/go/pkg"
 export GOPATH="$HOME/projects/go"
