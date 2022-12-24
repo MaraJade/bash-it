@@ -32,18 +32,17 @@ export PATH=~/.local/state:$PATH
 export PATH=~/local/bin:$PATH
 
 # Auto add ssh keys
-keychain id_ed25519_work_git
-keychain id_ed25519_personal
+keychain id_ed25519_github
 . ~/.keychain/`uname -n`-sh
 
 # Put tldr in path
 export PATH=~/bin:$PATH
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Go
 export GOBIN="$HOME/projects/go/bin"
@@ -52,16 +51,16 @@ export GOPATH="$HOME/projects/go"
 export GOPRIVATE="github.com/AspirationPartners"
 
 # Vault link
-export VAULT_ADDR=https://qa-vault.aspiration-corp.com
+# export VAULT_ADDR=https://qa-vault.aspiration-corp.com
 
 # Ruby
 # RVM: Ruby Version Manager
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/.rvm/bin"
 # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Confluence
-export CONFLUENCE_USERNAME=mgoossens@aspiration.com
+# export CONFLUENCE_USERNAME=mgoossens@aspiration.com
 
 export awsDockerLogin="aws ecr get-login-password | docker login --password-stdin --username AWS 332894900161.dkr.ecr.us-west-2.amazonaws.com"

@@ -4,7 +4,7 @@
 colorflag="--color"
 alias ls="command ls -h ${colorflag}"
 alias l="ls -lF ${colorflag}" # all files, in long format
-alias la="ls -a ${colorflag}" # all files inc dotfiles, in long format
+alias la="ls -A ${colorflag}" # all files inc dotfiles, in long format
 alias lsd='ls -lF ${colorflag} | grep "^d"' # only directories
 alias ll="ls -alFh ${colorflag}"
 
@@ -41,7 +41,8 @@ alias trim_whitespace="sed -i 's/[ \t]*$//' "
 
 alias rcopy="rsync -az --stats --progress --delete"
 
-alias ssh="ssh -A"
+# alias ssh="ssh -A"
+alias ssh="kitty +kitten ssh"
 
 alias dt='date "+%F %T"'
 
@@ -132,7 +133,7 @@ alias qlf='qlmanage -p "$@" >& /dev/null'
 alias websites="ssh twobitra@twobitranch.net"
 alias bot="ssh -vvv -i ~/.ssh/id_rsa_jnbot.pem ec2-user@ec2-54-153-39-73.us-west-1.compute.amazonaws.com"
 alias pi="ssh -i ~/.ssh/id_ed25519_pi pi@10.0.0.180"
-alias jadefire="ssh -i ~/.ssh/id_ed25519_jadefire marajade@10.0.0.209"
+alias jadefire="ssh -i ~/.ssh/id_ed25519_jadefire marajade@10.0.0.211"
 
 # Fuck
 eval "$(thefuck --alias fuck)"
@@ -149,12 +150,12 @@ alias jserve="docker run --name jekyll --rm -dp 4000:4000 --volume=\"$PWD:/srv/j
 alias jstop="docker stop jekyll"
 
 # JustNoBot Docker
-alias bbuild="docker build . -t marajade2/justnobot_image"
+alias bbuild="docker build . -t justnobot_image"
 alias testbuild="docker build . --target tester -t testbot_image"
-alias bnetwork="docker run --rm --name botnetwork -d --network justnobot --network-alias postgresql -v justnobot-postgresql:/var/lib/postgresql/data -e POSTGRES_PASSWORD=secret -e POSTGRES_DB=justno postgres"
-alias testnetwork="docker run --rm --name testnetwork -d --network testbot --network-alias postgresql -v justnobot-postgresql:/var/lib/postgresql/data -e POSTGRES_PASSWORD=secret -e POSTGRES_DB=test_bot postgres"
+alias bnetwork="docker run --rm --name botnetwork -d --network justnobot --network-alias postgresql -v justnodb:/var/lib/postgresql/data -e POSTGRES_PASSWORD=secret -e POSTGRES_DB=justno postgres"
+alias testnetwork="docker run --rm --name testnetwork -d --network testbot --network-alias postgresql -v testbotdb:/var/lib/postgresql/data -e POSTGRES_PASSWORD=secret -e POSTGRES_DB=test_bot postgres"
 alias bserve="docker run --rm --name justnobot -v justnodb:/var/lib/postgresql/data --network justnobot justnobot_image"
-alias btest="docker run --rm --name testbot -v justnodb:/var/lib/postgresql/data --network testbot testbot_image"
+alias btest="docker run --rm --name testbot -v testbotdb:/var/lib/postgresql/data --network testbot testbot_image"
 alias bstop="docker stop justnobot"
 
 # C++ compiling

@@ -150,11 +150,11 @@ function httpdebug() {
 }
 
 # Generates a tree view from the current directory:
-#function tree() {
-#  pwd
-#  ls -R | grep ":$" | \
-#  sed -e "s/:$//" -e "s/[^-][^\/]*\//--/g" -e "s/^/ /" -e "s/-/|/"
-#}
+function tree() {
+  pwd
+  ls -RA | grep ":$" | \
+  sed -e "s/:$//" -e "s/[^-][^\/]*\//--/g" -e "s/^/ /" -e "s/-/|/"
+}
 
 # `cd` into the last focused Finder window:
 function cdfinder(){
@@ -217,19 +217,19 @@ function cjson() {
 }
 
 # Shortcut function to control Apache Tomcat Catalina script:
-function catalina() {
-  # Long-hand version:
-  # Start:
-  # $CATALINA_HOME/bin/startup.sh
-  # ... or:
-  # $CATALINA_HOME/bin/catalina.sh start
-  # Stop:
-  # $CATALINA_HOME/bin/shutdown.sh
-  # ... or:
-  # $CATALINA_HOME/bin/catalina.sh stop
-  # See .bash_aliases for related alias.
-  $CATALINA_HOME/bin/catalina.sh ${1:-start};
-}
+# function catalina() {
+#  # Long-hand version:
+#  # Start:
+#  # $CATALINA_HOME/bin/startup.sh
+#  # ... or:
+#  # $CATALINA_HOME/bin/catalina.sh start
+#  # Stop:
+#  # $CATALINA_HOME/bin/shutdown.sh
+#  # ... or:
+#  # $CATALINA_HOME/bin/catalina.sh stop
+#  # See .bash_aliases for related alias.
+#  $CATALINA_HOME/bin/catalina.sh ${1:-start};
+# }
 
 # Freshen up your Homebrew:
 function freshbrew() {
