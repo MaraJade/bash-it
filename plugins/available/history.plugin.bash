@@ -5,14 +5,15 @@ about-plugin 'improve history handling with sane defaults'
 # variable when the shell exits, rather than overwriting the file.
 shopt -s histappend
 
-# erase duplicates; alternative option: export HISTCONTROL=ignoredups
-export HISTCONTROL=${HISTCONTROL:-ignorespace:erasedups}
+# 'ignorespace': don't save command lines which begin with a space to history
+# 'erasedups' (alternative 'ignoredups'): don't save duplicates to history
+# 'autoshare': automatically share history between multiple running shells
+: "${HISTCONTROL:=ignorespace:erasedups:autoshare}"
 
 # resize history to 100x the default (500)
-export HISTSIZE=${HISTSIZE:-50000}
-
+: "${HISTSIZE:=50000}"
 # Flush history to disk after each command.
-export PROMPT_COMMAND="history -a; history -c; history -r;${PROMPT_COMMAND}"
+# export PROMPT_COMMAND="history -a; history -c; history -r;${PROMPT_COMMAND}"
 
 function top-history() {
 	about 'print the name and count of the most commonly run tools'
