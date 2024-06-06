@@ -118,16 +118,8 @@ alias xo='function __xo() { xampp && open "http://"$1; }; __xo'
 # $ tomcat stop
 alias tomcat=catalina
 
-# List Atom packages:
-alias atompkgs="apm list --installed --bare"
-
-# Quick Look!
-# $ cd /Library/Desktop\ Pictures
-# $ qlf "Jaguar Aqua Graphite.jpg"
-alias qlf='qlmanage -p "$@" >& /dev/null'
-
-# Open current directory in Finder.app and Atom.app:
-#alias go="open . && atom ."
+# Updates
+alias update="sudo apt update; sudo apt -y upgrade; sudo apt -y autoremove"
 
 # Common ssh commands
 alias websites="ssh twobitra@twobitranch.net"
@@ -150,7 +142,7 @@ alias jserve="docker run --name jekyll --rm -dp 4000:4000 --volume=\"$PWD:/srv/j
 alias jstop="docker stop jekyll"
 
 # JustNoBot Docker
-alias bbuild="docker build . -t justnobot_image"
+alias bbuild="docker build . -t marajade2/justnobot"
 alias testbuild="docker build . --target tester -t testbot_image"
 alias bnetwork="docker run --rm --name botnetwork -d --network justnobot --network-alias postgresql -v justnodb:/var/lib/postgresql/data -e POSTGRES_PASSWORD=secret -e POSTGRES_DB=justno postgres"
 alias testnetwork="docker run --rm --name testnetwork -d --network testbot --network-alias postgresql -v testbotdb:/var/lib/postgresql/data -e POSTGRES_PASSWORD=secret -e POSTGRES_DB=test_bot postgres"
